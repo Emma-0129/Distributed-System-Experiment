@@ -4,8 +4,8 @@ import org.apache.spark.sql.SparkSession
 
 /**
  *
- * @Author wangyijie
- * @Date 2022/6/23 8:57
+ * @Author Emma
+ * @Date 2022/6/18 8:57
  * @Version 1.0
  */
 object SparkPageRank {
@@ -27,7 +27,7 @@ object SparkPageRank {
       .getOrCreate()
 
     val iters = 10
-    val lines = spark.read.textFile("D:\\my\\src\\main\\scala\\cs\\author\\input.txt").rdd
+    val lines = spark.read.textFile("D:\\Emma\\src\\main\\scala\\cs\\author\\input.txt").rdd
     val links = lines.map{ s =>
       val parts = s.split("\\s+")
       (parts(0), parts(1))
